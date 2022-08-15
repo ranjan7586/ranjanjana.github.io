@@ -1,0 +1,24 @@
+.head{
+    color: red;
+    text-align: center;
+}
+.p1{
+    text-align: justify;
+    font-family:cursive ;
+    font-size: large;
+    font-weight: bold;
+    color: green;
+}
+.p2{
+    text-align:right;
+    font-family:cursive ;
+    font-size: large;
+    font-weight: bold;
+    color: green;
+}
+.div1{
+    background-color:yellow;
+}
+.table{
+    text-align: center;
+}
