@@ -1,0 +1,17 @@
+.ba1{
+    text-decoration: none;
+    font-weight: bolder;
+    color: blue;
+    font-size: larger;
+}
+.b1{
+    padding: 10px;
+    background-color: aqua;
+    float: right;
+}
+.div1{
+    background-color: black;
+    height: 140px;
+    width: 100%;
+    vertical-align: middle;
+}

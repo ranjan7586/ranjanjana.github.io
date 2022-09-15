@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jana Programmer</title>
+    <link rel="stylesheet" href="as.css">
+</head>
+<body>
+    <div class="div1">
+    <nav>
+        <br>
+        <br>
+        <button class="b1"><a class="ba1" href="index.html"><img height="14px" width="24px" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="rj"></a></button>
+        <button class="b1"><a class="ba1" href="">About</a></button>
+        <button class="b1"><a class="ba1" href="">Services</a></button>
+        <button class="b1"><a class="ba1" href="">Contacts</a></button>
+    </nav>
+    </div>
+    <main style="background-color:aquamarine;height:max-content">
+        <pre style="font-size:larger ;">
+            ASSIGNMENT – 02 (DBMS LAB)
+❖ PROBLEM:
+Create a table student_rollno having attribute full_name, last_name, roll_no, ph_no and insert values.
+➢ PROGRAM:
+create table Ranjan_093(Full_name varchar2(30),Last_name varchar2(30),roll_no number(30),ph_no number(30));
+✓ OUTPUT: Table created.
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a1.png" alt="">
+➢ PROGRAM:
+begin
+insert into Ranjan_093 values('Ranjan','Jana',6,6294924389);
+insert into Ranjan_093 values('Shirsendu','Maondal',10,8149865539);
+insert into Ranjan_093 values('Sanjoy','Manna',1,8145213539);
+insert into Ranjan_093 values('Sampad','Kar',2,9735462501);
+insert into Ranjan_093 values('Sourav','Mondal',3,6294434285);
+insert into Ranjan_093 values('Biswadeep','Das',4,7865985636);
+insert into Ranjan_093 values('Pallab','Das',5,6294305542);
+insert into Ranjan_093 values('Rana','Biswas',7,8569475634);
+insert into Ranjan_093 values('Sujoy','Manna',8,8145790424);
+insert into Ranjan_093 values('Samir','Maity',9,9933384757);
+end
+	OUTPUT:
+Statement processed.
+	PROGRAM:
+Select * from ranjan_093;
+	OUTPUT:
+<img src="a2.png" alt="">
+❖ PROBLEM:
+Add a column dob in the above table.
+➢ PROGRAM:
+alter table ranjan_093 add DOB varchar2(38);
+✓ OUTPUT: Table altered.
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a3.png" alt="">
+❖ PROBLEM:
+Increase the size of last_name attribute by 10 in the above table.
+➢ PROGRAM:
+alter table ranjan_093 modify Last_name varchar2(40);
+✓ OUTPUT: Table altered.
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a4.png" alt="">
+❖ PROBLEM:
+Delete the ph_no attribute from the above table.
+➢ PROGRAM:
+alter table ranjan_093 drop column ph_no;
+✓ OUTPUT: Table dropped.
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a5.png" alt="">
+❖ PROBLEM:
+Delete the dob attribute from the above table.
+➢ PROGRAM:
+alter table ranjan_jana drop column dob;
+✓ OUTPUT: Table dropped.
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a6.png" alt="">
+❖ PROBLEM:
+Add dept_id attribute in the above table.
+➢ PROGRAM:
+alter table ranjan_jana add Dept_id varchar2(30);
+➢ PROGRAM: Describe Ranjan_093;
+✓ OUTPUT:
+<img src="images/a7.png" alt="">
+❖ PROBLEM:
+Permanenty delete the student_name table.
+➢ PROGRAM:
+drop table ranjan_jana;
+✓ OUTPUT:
+Table dropped.
+        </pre>
+    </main>
+</body>
+</html>
