@@ -1,0 +1,35 @@
+.ba1{
+    text-decoration: none;
+    font-weight: bolder;
+    color: blue;
+    font-size: larger;
+}
+.b1{
+    padding: 10px;
+    background-color: aqua;
+    float: right;
+}
+.div1{
+    background-color: black;
+    height: 140px;
+    width: 100%;
+    vertical-align: middle;
+}
+.main{
+    width:100%;
+    background-color: aquamarine;
+    height:max-content;
+}
+.b2{
+    padding: 10px;
+    background-color: aqua;
+    float: center;
+}
+.ul3{
+    display: inline-block;
+    line-height: 50px;
+    text-align: left;
+}
+.div33{
+    text-align: center;
+}
