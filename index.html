@@ -97,9 +97,8 @@
   
     <footer class="text-gray-600 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-              <a id="download-link-58979dce-2528-4824-bde5-7cb1fbaccd21" href="https://apidev.quantmx.ai/api/v1/documents/preview/OGQyMmRlNzItMTI4Ni00ODYyLThjNDctNDVlODk0MTMxNjdlfEBDSHxkNTRlYzgwMS00OTNlLTRkZDctOTczMy1jMzFlYzk3ZjVhODR8QENIfGltYWdlL2pwZWd8QENIfElNR18xNzMyNzkyMTMzOTc3LmpwZw==" onclick="download_file(`58979dce-2528-4824-bde5-7cb1fbaccd21`)" class="list-header" title="Download" download>
-                                            <span class="d-inline-block "><i class="ph-download ph-md ms-1"></i></span>
-                                        Download Image TEST</a>
+             <a href="javascript:void(0)" 
+       onclick="forceDownload('https://apidev.quantmx.ai/api/v1/documents/preview/OGQyMmRlNzItMTI4Ni00ODYyLThjNDctNDVlODk0MTMxNjdlfEBDSHw3ZjM3MzI1NC01NzI0LTRkZTUtYTM0Yy1jMTcyMjVlNGZiZGZ8QENIfGltYWdlL2pwZWd8QENIfElNRy0yMDI0MTEwNy1XQTAwMDBfYWVzdGhldGljICgyKS5qcGc', 'IMG-20241107-WA0000_aesthetic (2).jpg');">Download</a>
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -137,5 +136,26 @@
         </div>
       </footer>
 </body>
-
+  <script>
+        function forceDownload(filePath, fileName) {
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.blob(); // Convert to Blob
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = fileName; // Set file name
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a); // Clean up
+                    window.URL.revokeObjectURL(url); // Revoke temporary URL
+                })
+                .catch(error => console.error('Download error:', error));
+        }
+    </script>
 </html>
