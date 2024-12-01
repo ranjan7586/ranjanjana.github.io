@@ -98,7 +98,8 @@
     <footer class="text-gray-600 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
              <a href="javascript:void(0)" 
-       onclick="forceDownload('https://apidev.quantmx.ai/api/v1/documents/preview/OGQyMmRlNzItMTI4Ni00ODYyLThjNDctNDVlODk0MTMxNjdlfEBDSHw3ZjM3MzI1NC01NzI0LTRkZTUtYTM0Yy1jMTcyMjVlNGZiZGZ8QENIfGltYWdlL2pwZWd8QENIfElNRy0yMDI0MTEwNy1XQTAwMDBfYWVzdGhldGljICgyKS5qcGc', 'IMG-20241107-WA0000_aesthetic (2).jpg');">Download</a>
+       onclick="forceDownload('https://apidev.quantmx.ai/api/v1/documents/preview/OGQyMmRlNzItMTI4Ni00ODYyLThjNDctNDVlODk0MTMxNjdlfEBDSHw3ZjM3MzI1NC01NzI0LTRkZTUtYTM0Yy1jMTcyMjVlNGZiZGZ8QENIfGltYWdlL2pwZWd8QENIfElNRy0yMDI0MTEwNy1XQTAwMDBfYWVzdGhldGljICgyKS5qcGc', 'IMG-20241107-WA0000_aesthetic (2).jpg');">
+                 File Download</a>
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
@@ -157,5 +158,26 @@
                 })
                 .catch(error => console.error('Download error:', error));
         }
+      document.addEventListener('click', async (event) => {
+    const target = event.target;
+
+    if (target.tagName === 'A' && target.href.startsWith('blob:')) {
+        event.preventDefault();
+
+        const response = await fetch(target.href);
+        const blob = await response.blob();
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            // Send the file data and name to Android
+            const base64Data = reader.result.split(',')[1];
+            const fileName = target.download || 'downloaded_file';
+            AndroidDownloader.downloadFile(base64Data, fileName);
+        };
+
+        reader.readAsDataURL(blob);
+    }
+});
+
     </script>
 </html>
